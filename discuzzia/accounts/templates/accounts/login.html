@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="{% static 'login.css' %}"> 
 </head>
 <body>
+
+
+
     <!-- Container for the login form -->
     <div class="login-container">
         <!-- Heading for the login section -->
@@ -24,8 +27,11 @@
             <!-- Render the Django form as paragraph elements -->
             {{ form.as_p }}
             <button type="submit">Login</button> <!-- Submit button for the login form -->
+            <p class="no_account_text">Don't have an account yet?<a href="{% url 'signup' %}">Sign up for free</a></p>
         </form>
     </div>
+
+
 </body>
 </html>
 

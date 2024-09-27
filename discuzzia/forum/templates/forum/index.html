@@ -1,29 +1,122 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discuzzia - Forum</title> <!-- Page title for the forum -->
-    <link rel="stylesheet" href="{% static 'index.css' %}"> <!-- Linking the external CSS file for styling -->
-</head>
-<body>
-    <header>
-        <h1>Welcome to Discuzzia!</h1> <!-- Main welcome title -->
-        <p>The forum to discuss topics of interest.</p> <!-- Description of the forum -->
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discuzzia - Forum</title>
+    <!-- Page title for the forum -->
+    <link rel="stylesheet" href="{% static 'index.css' %}" />
+    <!-- Linking the external CSS file for styling -->
+  </head>
+  <body>
+    <div class="container">
+      <!-- Added container for content -->
+      <header>
+        <h1>Welcome to Discuzzia!</h1>
+        <!-- Main welcome title -->
+        <p>
+          The forum to discuss topics of interest and share your ideas with the
+          world.
+        </p>
+        <!-- Enhanced description -->
+      </header>
 
-    <nav>
+      <nav>
         <!-- Navigation links for user actions -->
-        <a href="{% url 'login' %}">Log In</a> <!-- Link to login page -->
-        <a href="{% url 'signup' %}">Create Account</a> <!-- Link to signup page -->
-        <a href="{% url 'login' %}">Enter the Forum</a> <!-- Link to enter the forum -->
-    </nav>
+        <a href="{% url 'login' %}">Log In</a>
+        <!-- Link to login page -->
+        <a href="{% url 'signup' %}">Create Account</a>
+        <!-- Link to signup page -->
+        <a href="{% url 'forum' %}">Enter the Forum</a>
+        <!-- Link to enter the forum -->
+      </nav>
+
+      <!-- New section: Popular Discussions -->
+      <section class="popular-discussions">
+        <h2>Popular Discussions</h2>
+        <article>
+          <h3><a href="#">How AI is transforming industries</a></h3>
+          <p>
+            Join the conversation about how artificial intelligence is reshaping
+            various sectors...
+          </p>
+        </article>
+        <article>
+          <h3><a href="#">Best fitness tips for 2024</a></h3>
+          <p>
+            Share your best workout routines and diet tips for a healthier
+            year...
+          </p>
+        </article>
+      </section>
+
+      <!-- New section: User Testimonials -->
+      <section class="testimonials">
+        <h2 class="testimonials-text">What Our Members Say</h2>
+        <div class="testimonials-container">
+          <!-- First Testimonial -->
+          <div class="testimonial">
+            <img
+              src="../../static/img/Fernanda.png"
+              alt="Fernanda"
+              class="testimonial-photo"
+            />
+            <blockquote>
+              "Discuzzia is the best place to share ideas and learn from
+              others!"
+              <cite>- Fernanda Rodriguez</cite>
+            </blockquote>
+          </div>
+
+          <!-- Second Testimonial -->
+          <div class="testimonial">
+            <img
+              src="../../static/img/John.png"
+              alt="John Smith"
+              class="testimonial-photo"
+            />
+            <blockquote>
+              "I’ve made meaningful connections here and always learn something
+              new."
+              <cite>- John Smith</cite>
+            </blockquote>
+          </div>
+
+          <!-- Third Testimonial -->
+          <div class="testimonial">
+            <img
+              src="../../static/img/Alex.png"
+              alt="Alex Johnson"
+              class="testimonial-photo"
+            />
+            <blockquote>
+              "The community here is so welcoming, and the discussions are
+              always insightful."
+              <cite>- Alex Johnson</cite>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to action -->
+      <section class="call-to-action">
+        <h2>Join the Discussion!</h2>
+        <p>
+          Create an account and start sharing your ideas with the world. It’s
+          free and easy to join!
+        </p>
+        <a href="{% url 'signup' %}" class="cta-button">Sign Up Now</a>
+      </section>
+    </div>
 
     <footer>
-        <p>Discuzzia - A place to share your ideas</p> <!-- Footer with a brief tagline -->
+      <div class="footer-content">
+        <div class="footer-branding">
+          <p>Discuzzia - <em>A place to share your ideas</em></p>
+          <p>&copy; 2024 Sigrid Müller</p>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
-
-

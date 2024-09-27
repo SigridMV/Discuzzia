@@ -2,47 +2,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discuzzia - Create Topic</title> <!-- Title of the page -->
-    <!-- Link to the CSS stylesheet for creating topics -->
-    <link rel="stylesheet" href="{% static 'create.css' %}">  
-    <!-- Link to the CSS stylesheet for the forum -->
-    <link rel="stylesheet" href="{% static 'forum.css' %}">  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discuzzia - Create Topic</title>
+    <!-- Link to the CSS stylesheets -->
+    <link rel="stylesheet" href="{% static 'create.css' %}" />
+    <link rel="stylesheet" href="{% static 'forum.css' %}" />
+    <link rel="stylesheet" href="{% static 'index.css' %}" />
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>Discuzzia</h1> <!-- Main title of the website -->
-            <ul>
-                <!-- Navigation links -->
-                <li><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="{% url 'forum' %}">Forum</a></li>
-                <li><a href="{% url 'profile' %}">Profile</a></li>
-                <li><a href="{% url 'index' %}">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Welcome to Discuzzia!</h1>
+            <p>The forum to discuss topics of interest and share your ideas with the world.</p>
+        </header>
 
-    <main>
-        {% block title %}Create a New Topic{% endblock %} <!-- Block for title content -->
+        {% include 'includes/nav2.html' %}
 
-        {% block content %}
+
+        <main>
+            {% block content %}
             <div class="create-topic-container">
-                <h2>What do you want to discuss today?</h2> <!-- Header for the topic creation form -->
-                <form method="POST" class="create-topic-form"> <!-- Form for submitting the new topic -->
-                    {% csrf_token %} <!-- CSRF token for security -->
-                    {{ form.as_p }} <!-- Render the form fields as paragraph elements -->
-                    <button type="submit" class="submit-button">Submit</button> <!-- Button to submit the form -->
+                <h2 class="topic-title">{% block title %}Create a New Topic{% endblock %}</h2>
+                <form method="POST" class="create-topic-form">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="submit-button">Submit</button>
                 </form>
-                <a href="{% url 'forum' %}" class="back-button">Back to Forum</a> <!-- Link to return to the forum -->
+                <a href="{% url 'forum' %}" class="back-button">Back to Forum</a>
             </div>
-        {% endblock %}
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Discuzzia. All rights reserved.</p> <!-- Footer content with copyright notice -->
-    </footer>
+            {% endblock %}
+        </main>
+    </div>
+    {% include 'includes/footer.html' %}
 </body>
 </html>
 

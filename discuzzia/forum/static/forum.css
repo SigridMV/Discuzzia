@@ -1,48 +1,5 @@
-/* Basic styles for the body */
-body {
-    font-family: Arial, sans-serif;  /* Sets the font family */
-    background-color: #f4f4f4;  /* Light gray background color */
-    color: #333;  /* Dark gray text color */
-    margin: 0;  /* Removes default margin */
-    padding: 0;  /* Removes default padding */
-}
-
-/* Header styles */
-header {
-    background: #4CAF50;  /* Green background color */
-    color: #fff;  /* White text color */
-    padding: 15px 0;  /* Vertical padding */
-    text-align: center;  /* Centers text */
-}
-
-/* Navigation styles */
-nav h1 {
-    margin: 0;  /* Removes margin */
-    margin-bottom: 10px;  /* Adds margin below the heading */
-}
-
-nav ul {
-    list-style: none;  /* Removes bullet points */
-    padding: 0;  /* Removes padding */
-}
-
-nav ul li {
-    display: inline;  /* Displays list items inline */
-    margin: 0 15px;  /* Horizontal spacing between items */
-}
-
-nav ul li a {
-    color: white;  /* White text color for links */
-    text-decoration: none;  /* Removes underline from links */
-}
-
-/* Heading styles */
-h2 {
-    color: #007BFF;  /* Blue color for h2 headings */
-}
-
 /* Styles for topic containers */
-.topic-container {
+.forum-section {
     max-width: 800px;  /* Maximum width of the container */
     margin: 20px auto;  /* Centers the container with vertical margin */
     padding: 20px;  /* Adds padding inside the container */
@@ -126,21 +83,6 @@ button:hover, .create-button:hover {
 /* Zebra striping for even table rows */
 .table tr:nth-child(even) {
     background-color: #f2f2f2;  /* Light gray background for even rows */
-}
-
-/* Styles for "Read more" links */
-.read-more {
-    display: inline-block;  /* Displays as a block element */
-    margin-top: 10px;  /* Adds margin on top */
-    color: #007BFF;  /* Blue text color */
-    text-decoration: none;  /* Removes underline */
-    font-weight: bold;  /* Bold text */
-    transition: color 0.3s; /* Smooth transition for color change */
-}
-
-/* Hover effect for "Read more" links */
-.read-more:hover {
-    color: #0056b3; /* Darker blue on hover */
 }
 
 /* Styles for create topic button */

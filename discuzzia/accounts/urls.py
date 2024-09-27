@@ -10,5 +10,6 @@ urlpatterns = [
      # URL for user signup, calling the signup view function
     path('signup/', views.signup, name='signup'),
      # URL for user profile, calling the profile view function
-    path('profile/', views.profile, name='profile')
+    path('profile/', views.profile, name='profile'),
+    path('password_reset/', auth_views.PasswordResetView.as_view(), name='password_reset'),
 ]

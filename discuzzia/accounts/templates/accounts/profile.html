@@ -5,27 +5,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title of the page -->
-    <title>User Profile</title> 
+    <title>Edit Profile</title> 
 
-    <!-- Link to CSS file -->
     <link rel="stylesheet" href="{% static 'profile.css' %}"> 
 </head>
 <body>
-    <!-- Container for the user profile information -->
-    <div class="profile-container"> 
-        <!-- Heading displaying the username -->
-        <h1>Profile of {{ user.username }}</h1> 
-        <!-- Display the user's first and last name -->
-        <p><strong>Name:</strong> {{ user.first_name }} {{ user.last_name }}</p> 
-        <!-- Display the user's email -->
-        <p><strong>Email:</strong> {{ user.email }}</p> 
+    <div class="profile-container">
+        <h1>Edit Profile of {{ user.username }}</h1>
+
+        <!-- Display the form to edit profile -->
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }} <!-- Render form fields for username, first name, last name, email -->
+            <button type="submit">Save Changes</button>
+        </form>
+
+        <!-- Link to reset password -->
+        <p>
+            <a href="{% url 'password_reset' %}">Reset password</a>
+        </p>
+
+        <!-- Display the last login information -->
+        <p><strong>Last login:</strong> {{ last_login }}</p>
+
+        <!-- Show success message after update -->
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
     </div>
 
-    <div class="button-container"> <!-- Container for buttons -->
-        <a href="{% url 'forum' %}" class="forum-button">Go to Forum</a> <!-- Link to the forum page -->
+    <div class="button-container">
+        <a href="{% url 'forum' %}" class="forum-button">Go to Forum</a>
     </div>
 </body>
 </html>
+
+
 
 

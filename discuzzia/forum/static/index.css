@@ -1,51 +1,240 @@
 /* Basic styles for the body */
 body {
-    font-family: Arial, sans-serif;  /* Sets the font family */
-    background-color: #f4f4f4;  /* Light gray background color */
-    margin: 0;  /* Removes default margin */
-    text-align: center;  /* Centers text alignment */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  /* Ensure the body covers the full viewport height */
+    text-align: center;
+}
+
+/* Container to wrap content */
+.container {
+    flex: 1;  /* Makes the container grow to fill available space */
 }
 
 /* Header styles */
 header {
-    background-color: #4CAF50;  /* Green background color */
-    color: white;  /* White text color */
-    padding: 15px;  /* Padding around header content */
-    font-size: 1.5rem;  /* Increases font size */
+    background-color: #a31621;
+    color: white;
+    padding: 15px;
+    font-size: 1.5rem;
 }
 
 /* Navigation styles */
 nav {
-    margin: 20px 0;  /* Vertical margin for the navigation */
+    margin: 20px 0;
 }
 
 nav a {
-    background-color: #4CAF50;  /* Green background for links */
-    color: white;  /* White text color */
-    padding: 10px 20px;  /* Padding inside links */
-    text-decoration: none;  /* Removes underline from links */
-    margin: 5px;  /* Margin between links */
-    border-radius: 5px;  /* Rounds the corners of links */
+    background-color: #ced3dc;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 5px;
+    border-radius: 5px;
 }
 
 /* Hover effect for navigation links */
 nav a:hover {
-    background-color: #45a049;  /* Darker green on hover */
+    background-color: #4e8098;
+    color: #ced3dc;
 }
 
 /* Main heading styles */
 h1 {
-    color: #333;  /* Dark gray color for headings */
+    color: white;
 }
 
 /* Paragraph styles */
 p {
-    font-size: 1.2rem;  /* Increases font size for paragraphs */
+    font-size: 1.2rem;
 }
 
 /* Footer styles */
 footer {
-    margin-top: 20px;  /* Adds space above the footer */
-    font-size: 0.9rem;  /* Smaller font size for footer text */
-    color: #777;  /* Light gray color for footer text */
+    background-color: #4e8098; /* Dark background for contrast */
+    color: white; /* White text color */
+    padding: 20px 0; /* Padding around the footer content */
+    font-size: 0.9rem; /* Slightly smaller text for footer */
+    text-align: center;
 }
+
+/* Footer layout */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Allows content to wrap on small screens */
+    justify-content: space-between; /* Space out the sections */
+    align-items: center;
+    max-width: 1200px; /* Limit the width of the footer */
+    margin: 0 auto; /* Center the footer content */
+    padding: 0 20px; /* Add padding on the sides */
+}
+
+/* Branding styles */
+.footer-branding {
+    text-align: left; /* Align branding text to the left */
+}
+
+.popular-discussions, .testimonials, .call-to-action {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+
+/* Popular discussions */
+.popular-discussions article {
+    margin-bottom: 20px;
+}
+
+.popular-discussions h3 {
+    font-size: 1.5rem;
+}
+
+.popular-discussions a {
+    text-decoration: none;
+    color: #a31621;
+    font-weight: bold;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Testimonial Container */
+.testimonials-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Individual Testimonial Box */
+.testimonial {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+/* Testimonial Photo */
+.testimonial-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Makes the photo circular */
+    object-fit: cover; /* Ensures the image fits within the circle */
+    margin-bottom: 15px;
+}
+
+
+
+/* Blockquote Styles */
+blockquote {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+cite {
+    font-style: normal;
+    color: #666;
+}
+
+/* Responsive Layout for Smaller Screens */
+@media (max-width: 768px) {
+    .testimonials-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Call to action */
+.call-to-action {
+    text-align: center;
+    background-color: #ced3dc;
+    color: black;
+    padding: 20px;
+    margin:0 100px 30px 100px;
+    border-radius: 5px;
+}
+
+
+
+.call-to-action .cta-button {
+    background-color: #fff;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.call-to-action .cta-button:hover {
+    background-color: #a31621;
+    color: white;
+}
+
+.call-to-action p{
+    margin-bottom: 20px;
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack the sections vertically */
+        text-align: center;
+    }
+
+    .footer-branding {
+        margin-bottom: 15px;
+    }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    header, nav, footer {
+        font-size: 1rem;
+    }
+
+    nav a {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        
+
+    }
+}
+
+
+

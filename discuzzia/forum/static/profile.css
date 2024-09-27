@@ -10,23 +10,40 @@ body {
 .profile-container {
     max-width: 600px; /* Maximum width for the container */
     margin: 50px auto; /* Center the container with top and bottom margin */
-    padding: 20px; /* Internal padding for the container */
+    padding: 30px; /* Increased internal padding for a more spacious feel */
     background: #fff; /* White background for the profile container */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow around the container */
+    border-radius: 12px; /* Slightly more rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effect */
+    font-size: 20px;
+}
+
+/* Hover effect for the profile container */
+.profile-container:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
 
 /* Styles for the main heading */
 h1 {
-    color: #333; /* Dark gray color for the heading */
-    text-align: center; /* Center the heading text */
+    text-align: center;
+    color: #a31621; /* Dark red color */
+    margin-bottom: 15px; /* Increased space below heading */
+    font-size: 26px; /* Slightly larger font size for emphasis */
+    font-weight: bold; /* Bold font weight for the heading */
 }
 
 /* Styles for paragraphs */
 p {
-    font-size: 16px; /* Font size for paragraph text */
-    line-height: 1.5; /* Line height for better readability */
-    color: #666; /* Medium gray color for paragraph text */
+    text-align: center;
+    color: #4e8098; /* Soft blue */
+    margin-bottom: 25px; /* Increased space below paragraphs */
+    line-height: 1.6; /* Increased line height for readability */
+}
+
+button[type="submit"] {
+    padding: 10px;
+    font-size: 15px;
 }
 
 /* Styles for strong text */
@@ -34,17 +51,52 @@ strong {
     color: #333; /* Dark gray color for emphasized text */
 }
 
+/* Button container styles */
+.button-container {
+    text-align: center; /* Center the button container */
+    margin-top: 20px; /* Space above button container */
+}
+
+/* Styles for buttons */
+.button-container a {
+    display: inline-block; /* Align as block for padding */
+    padding: 10px 20px; /* Padding around the button */
+    background-color: #a31621; /* Dark red background for buttons */
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline from links */
+    border-radius: 5px; /* Rounded corners for buttons */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for buttons */
+.button-container a:hover {
+    background-color: #900f15; /* Darker red on hover */
+}
+
+
+.helptext {
+    font-size: 15px; /* Smaller font size */
+    color: #6c757d; /* Soft gray color for help text */
+    margin-top: 5px; /* Space above help text */
+    display: block; /* Make help text a block element */
+}
+
+input {
+    font-size: 18px;
+}
+
 /* Responsive styles for devices with a maximum width of 600px */
 @media (max-width: 600px) {
     .profile-container {
-        padding: 15px; /* Reduced padding for smaller screens */
+        padding: 20px; /* Adjusted padding for smaller screens */
     }
     
     h1 {
-        font-size: 24px; /* Smaller font size for the heading on smaller screens */
+        font-size: 22px; /* Smaller font size for the heading on smaller screens */
     }
     
     p {
         font-size: 14px; /* Smaller font size for paragraphs on smaller screens */
     }
 }
+
