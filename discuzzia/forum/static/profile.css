@@ -1,0 +1,50 @@
+/* Styles for the body of the page */
+body {
+    font-family: 'Arial', sans-serif; /* Font for the text */
+    background-color: #f4f4f4; /* Light gray background color */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* Container for the profile section */
+.profile-container {
+    max-width: 600px; /* Maximum width for the container */
+    margin: 50px auto; /* Center the container with top and bottom margin */
+    padding: 20px; /* Internal padding for the container */
+    background: #fff; /* White background for the profile container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow around the container */
+}
+
+/* Styles for the main heading */
+h1 {
+    color: #333; /* Dark gray color for the heading */
+    text-align: center; /* Center the heading text */
+}
+
+/* Styles for paragraphs */
+p {
+    font-size: 16px; /* Font size for paragraph text */
+    line-height: 1.5; /* Line height for better readability */
+    color: #666; /* Medium gray color for paragraph text */
+}
+
+/* Styles for strong text */
+strong {
+    color: #333; /* Dark gray color for emphasized text */
+}
+
+/* Responsive styles for devices with a maximum width of 600px */
+@media (max-width: 600px) {
+    .profile-container {
+        padding: 15px; /* Reduced padding for smaller screens */
+    }
+    
+    h1 {
+        font-size: 24px; /* Smaller font size for the heading on smaller screens */
+    }
+    
+    p {
+        font-size: 14px; /* Smaller font size for paragraphs on smaller screens */
+    }
+}

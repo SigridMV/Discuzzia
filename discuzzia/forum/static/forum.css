@@ -1,0 +1,157 @@
+/* Basic styles for the body */
+body {
+    font-family: Arial, sans-serif;  /* Sets the font family */
+    background-color: #f4f4f4;  /* Light gray background color */
+    color: #333;  /* Dark gray text color */
+    margin: 0;  /* Removes default margin */
+    padding: 0;  /* Removes default padding */
+}
+
+/* Header styles */
+header {
+    background: #4CAF50;  /* Green background color */
+    color: #fff;  /* White text color */
+    padding: 15px 0;  /* Vertical padding */
+    text-align: center;  /* Centers text */
+}
+
+/* Navigation styles */
+nav h1 {
+    margin: 0;  /* Removes margin */
+    margin-bottom: 10px;  /* Adds margin below the heading */
+}
+
+nav ul {
+    list-style: none;  /* Removes bullet points */
+    padding: 0;  /* Removes padding */
+}
+
+nav ul li {
+    display: inline;  /* Displays list items inline */
+    margin: 0 15px;  /* Horizontal spacing between items */
+}
+
+nav ul li a {
+    color: white;  /* White text color for links */
+    text-decoration: none;  /* Removes underline from links */
+}
+
+/* Heading styles */
+h2 {
+    color: #007BFF;  /* Blue color for h2 headings */
+}
+
+/* Styles for topic containers */
+.topic-container {
+    max-width: 800px;  /* Maximum width of the container */
+    margin: 20px auto;  /* Centers the container with vertical margin */
+    padding: 20px;  /* Adds padding inside the container */
+    display: flex;  /* Enables flexbox layout */
+    flex-direction: column;  /* Arranges child elements in a column */
+    gap: 20px; /* Spacing between topic cards */
+}
+
+/* Styles for individual topic cards */
+.topic-card {
+    background: white;  /* White background for cards */
+    border-radius: 8px;  /* Rounds the corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Adds shadow for depth */
+    padding: 15px;  /* Adds padding inside cards */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for topic cards */
+.topic-card:hover {
+    transform: translateY(-5px); /* Lifts the card on hover */
+}
+
+/* Styles for heading within topic cards */
+.topic-card h3 {
+    margin: 0 0 10px; /* Sets bottom margin */
+}
+
+/* Styles for paragraphs within topic cards */
+.topic-card p {
+    margin: 5px 0; /* Spacing between paragraphs */
+}
+
+/* Button styles */
+button, .create-button {
+    background-color: #007BFF;  /* Blue background for buttons */
+    color: white;  /* White text color */
+    border: none;  /* Removes default border */
+    padding: 10px 15px;  /* Padding inside the button */
+    border-radius: 5px;  /* Rounds the corners */
+    cursor: pointer;  /* Changes cursor to pointer */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Hover effect for buttons */
+button:hover, .create-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Styles for back button */
+.back-button {
+    display: inline-block;  /* Displays as a block element */
+    margin-top: 10px;  /* Adds top margin */
+    text-decoration: none;  /* Removes underline */
+    color: #007BFF;  /* Blue text color */
+}
+
+/* Hover effect for back button */
+.back-button:hover {
+    text-decoration: underline;  /* Underlines the text on hover */
+}
+
+/* Styles for tables */
+.table {
+    width: 100%;  /* Full width for tables */
+    border-collapse: collapse;  /* Collapses borders */
+}
+
+/* Table header and cell styles */
+.table th, .table td {
+    border: 1px solid #dddddd;  /* Light gray border */
+    text-align: left;  /* Aligns text to the left */
+    padding: 8px;  /* Padding inside cells */
+}
+
+/* Header style for tables */
+.table th {
+    background-color: #007BFF;  /* Blue background for table headers */
+    color: white;  /* White text color for headers */
+}
+
+/* Zebra striping for even table rows */
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;  /* Light gray background for even rows */
+}
+
+/* Styles for "Read more" links */
+.read-more {
+    display: inline-block;  /* Displays as a block element */
+    margin-top: 10px;  /* Adds margin on top */
+    color: #007BFF;  /* Blue text color */
+    text-decoration: none;  /* Removes underline */
+    font-weight: bold;  /* Bold text */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+/* Hover effect for "Read more" links */
+.read-more:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Styles for create topic button */
+.create-topic {
+    text-align: center; /* Centers the button */
+    margin-top: 20px; /* Adds top margin */
+}
+
+/* Styles for create button */
+.create-button {
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 16px; /* Sets font size */
+}
+

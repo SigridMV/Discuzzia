@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Reply - Discuzzia</title> <!-- Page title for editing replies -->
+    <!-- Linking the external CSS file for forum styling -->
+    <link rel="stylesheet" href="{% static 'forum.css' %}">
+</head>
+<body>
+<header>
+    <nav>
+        <h1>Discuzzia</h1> <!-- Main title of the website -->
+        <ul>
+            <!-- Navigation links for the header -->
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'forum' %}">Forum</a></li>
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li><a href="{% url 'index' %}">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Container for the reply editing section -->
+<div class="edit-container">
+    <h2>Edit Reply</h2> <!-- Header for the editing form -->
+    <form method="POST"> <!-- Form for editing the reply -->
+        {% csrf_token %} <!-- CSRF token for security -->
+        {{ form.as_p }} <!-- Display the form fields in paragraphs -->
+        <button type="submit">Save Changes</button> <!-- Submit button to save changes -->
+    </form>
+    <a href="{% url 'moderation' %}" class="back-button">Back to Moderation</a> <!-- Link to return to the moderation page -->
+</div>
+
+</body>
+</html>
+
+

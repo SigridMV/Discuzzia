@@ -1,0 +1,31 @@
+<!-- Load static files for the Django template -->
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Set the title of the webpage -->
+    <title>Login</title> 
+
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="{% static 'login.css' %}"> 
+</head>
+<body>
+    <!-- Container for the login form -->
+    <div class="login-container">
+        <!-- Heading for the login section -->
+        <h2>Login</h2>
+        <!-- Start the form, specifying the POST method for form submission -->
+        <form method="post">
+            <!-- Include CSRF token for security against cross-site request forgery -->
+            {% csrf_token %}
+            <!-- Render the Django form as paragraph elements -->
+            {{ form.as_p }}
+            <button type="submit">Login</button> <!-- Submit button for the login form -->
+        </form>
+    </div>
+</body>
+</html>
+

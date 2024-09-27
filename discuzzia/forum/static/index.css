@@ -1,0 +1,51 @@
+/* Basic styles for the body */
+body {
+    font-family: Arial, sans-serif;  /* Sets the font family */
+    background-color: #f4f4f4;  /* Light gray background color */
+    margin: 0;  /* Removes default margin */
+    text-align: center;  /* Centers text alignment */
+}
+
+/* Header styles */
+header {
+    background-color: #4CAF50;  /* Green background color */
+    color: white;  /* White text color */
+    padding: 15px;  /* Padding around header content */
+    font-size: 1.5rem;  /* Increases font size */
+}
+
+/* Navigation styles */
+nav {
+    margin: 20px 0;  /* Vertical margin for the navigation */
+}
+
+nav a {
+    background-color: #4CAF50;  /* Green background for links */
+    color: white;  /* White text color */
+    padding: 10px 20px;  /* Padding inside links */
+    text-decoration: none;  /* Removes underline from links */
+    margin: 5px;  /* Margin between links */
+    border-radius: 5px;  /* Rounds the corners of links */
+}
+
+/* Hover effect for navigation links */
+nav a:hover {
+    background-color: #45a049;  /* Darker green on hover */
+}
+
+/* Main heading styles */
+h1 {
+    color: #333;  /* Dark gray color for headings */
+}
+
+/* Paragraph styles */
+p {
+    font-size: 1.2rem;  /* Increases font size for paragraphs */
+}
+
+/* Footer styles */
+footer {
+    margin-top: 20px;  /* Adds space above the footer */
+    font-size: 0.9rem;  /* Smaller font size for footer text */
+    color: #777;  /* Light gray color for footer text */
+}

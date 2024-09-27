@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discuzzia - Forum</title> <!-- Page title for the forum -->
+    <!-- Linking the external CSS file for forum styling -->
+    <link rel="stylesheet" href="{% static 'forum.css' %}">  
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Discuzzia</h1> <!-- Main title of the website -->
+            <ul>
+                <!-- Navigation links for the header -->
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'forum' %}">Forum</a></li>
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+                <li><a href="{% url 'index' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="forum-section">
+            <h2>Discussion Topics</h2> <!-- Section header for discussion topics -->
+            <div class="topic-container">
+                {% for topic in topics %} <!-- Loop through each topic -->
+                <div class="topic-card">
+                    <h3><a href="{% url 'topic_detail' topic.id %}">{{ topic.title }}</a></h3> <!-- Topic title linked to detail page -->
+                    <p>Created by: <strong>{{ topic.user.username }}</strong> on {{ topic.created_at }}</p> <!-- Author and creation date -->
+                    <p>{{ topic.description|truncatewords:30 }}</p> <!-- Truncated description of the topic -->
+                    <a href="{% url 'topic_detail' topic.id %}" class="read-more">Read More</a> <!-- Link to read more -->
+                </div>
+                {% empty %} <!-- Message when no topics are available -->
+                <p>No topics available.</p>
+                {% endfor %}
+            </div>
+
+            <div class="create-topic">
+                <a href="{% url 'create_topic' %}" class="create-button">Create New Topic</a> <!-- Link to create a new topic -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Discuzzia. All rights reserved.</p> <!-- Footer with copyright information -->
+    </footer>
+</body>
+</html>
+
+

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Deletion - Discuzzia</title>
+    <!-- Link to the CSS stylesheet for styling the forum page -->
+    <link rel="stylesheet" href="{% static 'forum.css' %}">
+</head>
+<body>
+<header>
+    <nav>
+        <h1>Discuzzia</h1> <!-- Main title of the website -->
+        <ul>
+            <!-- Navigation links -->
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'forum' %}">Forum</a></li>
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li><a href="{% url 'index' %}">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="delete-container">
+    <h2>Confirm Deletion of Reply</h2> <!-- Header for the deletion confirmation -->
+    <p>Are you sure you want to delete this reply?</p> <!-- Confirmation message -->
+    <form method="POST"> <!-- Form for submitting the deletion action -->
+        {% csrf_token %} <!-- CSRF token for security -->
+        <button type="submit">Delete</button> <!-- Button to confirm deletion -->
+    </form>
+    <a href="{% url 'moderation' %}" class="back-button">Cancel</a> <!-- Link to cancel the action -->
+</div>
+</body>
+</html>
+
+

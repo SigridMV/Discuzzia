@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discuzzia</title> <!-- Title of the page -->
+    <link rel="stylesheet" href="{% static 'topic.css' %}"> <!-- Linking the CSS file for topic styling -->
+</head>
+<body>
+<header>
+    <nav>
+        <h1>Discuzzia</h1> <!-- Main title of the forum -->
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li> <!-- Link to home page -->
+            <li><a href="{% url 'forum' %}">Forum</a></li> <!-- Link to forum page -->
+            <li><a href="{% url 'profile' %}">Profile</a></li> <!-- Link to user profile page -->
+            <li><a href="{% url 'index' %}">Logout</a></li> <!-- Link to logout -->
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+  {% block content %} <!-- Content block for rendering topic details -->
+    <div class="topic-details">
+      <h1>{{ topic.title }}</h1> <!-- Display the title of the topic -->
+      <p class="content">{{ topic.content }}</p> <!-- Display the content of the topic -->
+      <p class="author">Author: <span>{{ topic.author.username }}</span></p> <!-- Display the author's username -->
+      <p class="date">Created at: <span>{{ topic.created_at }}</span></p> <!-- Display the creation date of the topic -->
+
+      <h2>Replies</h2>
+      <div class="replies">
+        {% for reply in replies %}
+          <div class="reply">
+            <p>{{ reply.content }}</p> <!-- Display the reply content -->
+            <p class="reply-author">By: <span>{{ reply.author.username }}</span> on {{ reply.created_at }}</p> <!-- Display reply author's username and date -->
+          </div>
+        {% empty %}
+          <p>No replies yet.</p> <!-- Message if no replies are available -->
+        {% endfor %}
+      </div>
+
+      <h2>Add a Reply</h2>
+      <form method="post" class="reply-form"> <!-- Form to submit a reply -->
+        {% csrf_token %}
+        {{ form.as_p }} <!-- Render the reply form -->
+        <button type="submit">Add Reply</button> <!-- Submit button for adding a reply -->
+      </form>
+      <a href="{% url 'forum' %}" class="back-button">Back to Forum</a> <!-- Link to go back to the forum -->
+    </div>
+  {% endblock %}
+</main>
+</body>
+</html>
+

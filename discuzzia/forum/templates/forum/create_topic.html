@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discuzzia - Create Topic</title> <!-- Title of the page -->
+    <!-- Link to the CSS stylesheet for creating topics -->
+    <link rel="stylesheet" href="{% static 'create.css' %}">  
+    <!-- Link to the CSS stylesheet for the forum -->
+    <link rel="stylesheet" href="{% static 'forum.css' %}">  
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Discuzzia</h1> <!-- Main title of the website -->
+            <ul>
+                <!-- Navigation links -->
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'forum' %}">Forum</a></li>
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+                <li><a href="{% url 'index' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block title %}Create a New Topic{% endblock %} <!-- Block for title content -->
+
+        {% block content %}
+            <div class="create-topic-container">
+                <h2>What do you want to discuss today?</h2> <!-- Header for the topic creation form -->
+                <form method="POST" class="create-topic-form"> <!-- Form for submitting the new topic -->
+                    {% csrf_token %} <!-- CSRF token for security -->
+                    {{ form.as_p }} <!-- Render the form fields as paragraph elements -->
+                    <button type="submit" class="submit-button">Submit</button> <!-- Button to submit the form -->
+                </form>
+                <a href="{% url 'forum' %}" class="back-button">Back to Forum</a> <!-- Link to return to the forum -->
+            </div>
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Discuzzia. All rights reserved.</p> <!-- Footer content with copyright notice -->
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discuzzia - Forum</title> <!-- Page title for the forum -->
+    <link rel="stylesheet" href="{% static 'index.css' %}"> <!-- Linking the external CSS file for styling -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to Discuzzia!</h1> <!-- Main welcome title -->
+        <p>The forum to discuss topics of interest.</p> <!-- Description of the forum -->
+    </header>
+
+    <nav>
+        <!-- Navigation links for user actions -->
+        <a href="{% url 'login' %}">Log In</a> <!-- Link to login page -->
+        <a href="{% url 'signup' %}">Create Account</a> <!-- Link to signup page -->
+        <a href="{% url 'login' %}">Enter the Forum</a> <!-- Link to enter the forum -->
+    </nav>
+
+    <footer>
+        <p>Discuzzia - A place to share your ideas</p> <!-- Footer with a brief tagline -->
+    </footer>
+</body>
+</html>
+
+

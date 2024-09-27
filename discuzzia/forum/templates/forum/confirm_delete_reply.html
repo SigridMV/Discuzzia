@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Deletion of Reply</title>
+    <!-- Link to the CSS stylesheet for styling the confirmation page -->
+    <link rel="stylesheet" href="{% static 'confirm_delete_reply.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Confirm Deletion</h1> <!-- Main header for the page -->
+    </header>
+
+    <main>
+        <!-- Message asking for confirmation to delete the reply -->
+        <p>Are you sure you want to delete the reply from <strong>{{ reply.author.username }}</strong>?</p>
+        <form method="POST"> <!-- Form for the deletion action -->
+            {% csrf_token %} <!-- CSRF token for security -->
+            <button type="submit">Delete</button> <!-- Button to confirm deletion -->
+        </form>
+        <a href="{% url 'moderation' %}">Cancel</a> <!-- Link to cancel the action -->
+    </main>
+</body>
+</html>
+

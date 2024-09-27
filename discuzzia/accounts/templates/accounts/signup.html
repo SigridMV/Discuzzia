@@ -1,0 +1,28 @@
+<!-- Load static files for the Django template -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the page --> 
+    <title>Sign Up</title> 
+
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+</head>
+<body>
+    <!-- Container for the signup form -->
+    <div class="signup-container"> 
+         <!-- Heading for the signup form -->
+        <h2>Sign Up</h2>
+        <!-- Start the form with POST method for submission -->
+        <form method="post"> 
+            {% csrf_token %} <!-- Include CSRF token for security -->
+            {{ form.as_p }} <!-- Render the Django form as paragraph elements -->
+            <button type="submit">Sign Up</button> <!-- Submit button for the signup form -->
+        </form>
+    </div>
+</body>
+</html>
+

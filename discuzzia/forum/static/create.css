@@ -1,0 +1,70 @@
+/* Container for the create topic section */
+.create-topic-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header style for the topic creation */
+h2 {
+    color: #333;
+    text-align: center;  /* Centers the text */
+}
+
+/* Flex container for the form elements */
+.create-topic-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styles for input and textarea elements in the form */
+.create-topic-form input,
+.create-topic-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Styles for input and textarea when focused */
+.create-topic-form input:focus,
+.create-topic-form textarea:focus {
+    border-color: #007bff; /* Cambia el color del borde al enfocarse */
+    outline: none;
+}
+
+/* Styles for the submit button */
+.submit-button {
+    padding: 10px;
+    background-color: #28a745; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the submit button */
+.submit-button:hover {
+    background-color: #218838; /* Verde más oscuro al pasar el ratón */
+}
+
+/* Styles for the back button */
+.back-button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Hover effect for the back button */
+.back-button:hover {
+    text-decoration: underline;
+}
