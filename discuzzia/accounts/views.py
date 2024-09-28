@@ -4,6 +4,7 @@ from django.contrib.auth import login  # Import the login function to authentica
 from django.contrib.auth.decorators import login_required  # Import the login_required decorator to restrict access
 from .forms import CustomUserChangeForm
 from django.contrib import messages
+from django.contrib.auth import logout
 
 def signup(request):
     """
@@ -43,9 +44,11 @@ def profile(request):
         'last_login': request.user.last_login,
     }
 
-    return render(request, 'accounts/profile.html', context)  # Renderiza la plantilla con el formulario y datos adicionales
+    return render(request, 'accounts/profile.html', context) 
 
-
+def custom_logout(request):
+    logout(request) 
+    return redirect('index')
  
 
 

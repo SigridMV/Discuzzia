@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Topic, Reply
 from .forms import TopicForm, ReplyForm
+from django.contrib.auth import logout
 
 @login_required
 def moderation(request):
@@ -51,17 +52,24 @@ def edit_reply(request, reply_id):
 @login_required
 def delete_reply(request, reply_id):
     reply = get_object_or_404(Reply, id=reply_id)
+    
+    if not request.user.is_staff:  # Only admins can delete replies
+        return redirect('index')
+    
     if request.method == 'POST':
         reply.delete()
         return redirect('moderation')  # Redirect back to moderation
     return render(request, 'forum/confirm_delete_reply.html', {'reply': reply})
+
 
 def index(request):
     return render(request, 'forum/index.html')  # Render the 'index.html' template
 
 @login_required
 def forum(request):
-    return render(request, 'forum/forum.html')
+    topics = Topic.objects.all().order_by('-created_at')  # Get all topics ordered by creation date
+    return render(request, 'forum/forum.html', {'topics': topics})
+
 
 @login_required
 def create_topic(request):
@@ -93,3 +101,19 @@ def topic_detail(request, topic_id):
     return render(request, 'forum/topic_detail.html', {'topic': topic, 'replies': replies, 'form': form})
 
 
+@login_required
+def delete_topic(request, topic_id):
+    topic = get_object_or_404(Topic, id=topic_id)
+    
+    if not request.user.is_staff:  # Only admins can delete
+        return redirect('index')  # Non-admins are redirected
+    
+    if request.method == 'POST':
+        topic.delete()
+        return redirect('moderation')  # Redirect back to moderation
+    return render(request, 'forum/confirm_delete_topic.html', {'topic': topic})
+
+
+# def custom_logout(request):
+#     logout(request) 
+#     return redirect('index')

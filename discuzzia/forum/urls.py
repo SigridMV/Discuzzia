@@ -11,4 +11,5 @@ urlpatterns = [
     path('delete_topic/<int:topic_id>/', views.delete_topic, name='delete_topic'),  # Route to delete a topic
     path('edit_reply/<int:reply_id>/', views.edit_reply, name='edit_reply'),  # Route to edit a reply
     path('delete_reply/<int:reply_id>/', views.delete_reply, name='delete_reply'),  # Route to delete a reply
+    
 ]

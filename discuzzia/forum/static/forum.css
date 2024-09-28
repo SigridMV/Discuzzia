@@ -15,6 +15,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Adds shadow for depth */
     padding: 15px;  /* Adds padding inside cards */
     transition: transform 0.2s; /* Smooth transition for hover effect */
+    margin-bottom: 10px;
 }
 
 /* Hover effect for topic cards */
@@ -95,5 +96,9 @@ button:hover, .create-button:hover {
 .create-button {
     padding: 10px 20px; /* Padding inside the button */
     font-size: 16px; /* Sets font size */
+}
+
+.moderation-container h2{
+    padding-top: 20px;
 }
 

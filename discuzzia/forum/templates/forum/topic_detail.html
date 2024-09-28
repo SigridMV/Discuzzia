@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="{% static 'index.css' %}" />
     <link rel="stylesheet" href="{% static 'topic.css' %}" />
+    <link rel="icon" href="{% static '/img/favicon.png' %}" type="image/x-icon" />
   </head>
   <body>
     {% include 'includes/header.html' %} 
@@ -28,15 +29,14 @@
       <p class="date">Created at: <span>{{ topic.created_at }}</span></p>
       <!-- Display the creation date of the topic -->
 
-      <h2>Replies</h2>
+      <p class="replies-title">Replies</p>
       <div class="replies">
         {% for reply in replies %}
         <div class="reply">
           <p>{{ reply.content }}</p>
           <!-- Display the reply content -->
           <p class="reply-author">
-            By: <span>{{ reply.author.username }}</span> on {{ reply.created_at
-            }}
+            By: {{ reply.author.first_name|default:reply.author.username }} on {{ reply.created_at }}
           </p>
           <!-- Display reply author's username and date -->
         </div>
@@ -46,10 +46,12 @@
         {% endfor %}
       </div>
 
-      <h2>Add a Reply</h2>
+      
       <form method="post" class="reply-form">
+        <p>Add a Reply</p>
         <!-- Form to submit a reply -->
         {% csrf_token %} {{ form.as_p }}
+        
         <!-- Render the reply form -->
         <button type="submit">Add Reply</button>
         <!-- Submit button for adding a reply -->

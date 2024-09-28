@@ -11,13 +11,18 @@
 
     <!-- Link to CSS file -->
     <link rel="stylesheet" href="{% static 'login.css' %}"> 
+    <link rel="icon" href="{% static '/img/favicon.png' %}" type="image/x-icon" />
 </head>
 <body>
 
 
-
     <!-- Container for the login form -->
     <div class="login-container">
+        <div class="back-to-home">
+            <a href="/">
+              <img src="{% static 'img/home.png' %}" alt="Back to Home" class="home-icon" />
+            </a>
+          </div>
         <!-- Heading for the login section -->
         <h2>Login</h2>
         <!-- Start the form, specifying the POST method for form submission -->

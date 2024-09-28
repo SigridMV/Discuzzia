@@ -5,20 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moderation - Discuzzia</title> <!-- Page title for moderation section -->
-    <link rel="stylesheet" href="{% static 'forum.css' %}"> <!-- Linking the external CSS file for styling -->
+    <link rel="stylesheet" href="{% static 'forum.css' %}">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="icon" href="{% static '/img/favicon.png' %}" type="image/x-icon" />
+
 </head>
 <body>
-<header>
-    <nav>
-        <h1>Discuzzia</h1> <!-- Main title of the forum -->
-        <ul>
-            <li><a href="{% url 'index' %}">Home</a></li> <!-- Link to home page -->
-            <li><a href="{% url 'forum' %}">Forum</a></li> <!-- Link to forum page -->
-            <li><a href="{% url 'profile' %}">Profile</a></li> <!-- Link to user profile page -->
-            <li><a href="{% url 'index' %}">Logout</a></li> <!-- Link to logout -->
-        </ul>
-    </nav>
-</header>
+    {% include 'includes/header.html' %}
 <div class="moderation-container">
     <h2>Moderation of Posts</h2> <!-- Main heading for moderation section -->
     <h3>Topics</h3>

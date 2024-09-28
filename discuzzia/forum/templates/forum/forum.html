@@ -6,14 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discuzzia - Forum</title>
     <!-- Page title for the forum -->
-    <link rel="stylesheet" href="{% static 'index.css' %}" />
     <link rel="stylesheet" href="{% static 'forum.css' %}" />
+    <link rel="stylesheet" href="{% static 'index.css' %}" />
+    <link rel="icon" href="{% static '/img/favicon.png' %}" type="image/x-icon" />
   </head>
   <body>
-    <div class="container">
-      {% include 'includes/header.html' %}
-      {% include 'includes/nav2.html' %}
-      
+
+    {% include 'includes/header.html' %}
+    {% include 'includes/nav2.html' %}
+
+
+    
 
       <main>
         <section class="forum-section">
@@ -28,39 +31,36 @@
           </div>
 
           <div class="topic-container">
-            
-          </div>
             {% for topic in topics %}
-            <!-- Loop through each topic -->
-            <div class="topic-card">
-              <h3>
-                <a href="{% url 'topic_detail' topic.id %}"
-                  >{{ topic.title }}</a
-                >
-              </h3>
-              <!-- Topic title linked to detail page -->
-              <p>
-                Created by: <strong>{{ topic.user.username }}</strong> on {{
-                topic.created_at }}
-              </p>
-              <!-- Author and creation date -->
-              <p>{{ topic.description|truncatewords:30 }}</p>
-              <!-- Truncated description of the topic -->
-              <a href="{% url 'topic_detail' topic.id %}" class="read-more"
-                >Read More</a
-              >
-              <!-- Link to read more -->
-            </div>
+              <!-- Loop through each topic -->
+              <div class="topic-card">
+                <h3>
+                  <a href="{% url 'topic_detail' topic.id %}">{{ topic.title }}</a>
+                </h3>
+                <!-- Topic title linked to detail page -->
+                <p>
+                  Created by: <strong>{{ topic.author.username }}</strong> on {{ topic.created_at }}
+                </p>
+                <!-- Author and creation date -->
+                <p>{{ topic.content|truncatewords:30 }}</p>
+                <!-- Truncated description of the topic -->
+                <a href="{% url 'topic_detail' topic.id %}" class="read-more">Read More</a>
+                <!-- Link to read more -->
+              </div>
             {% empty %}
-            <!-- Message when no topics are available -->
-            <p>No topics available.</p>
+              <!-- Message when no topics are available -->
+              <p>No topics available.</p>
             {% endfor %}
           </div>
+          
         </section>
       </main>
+
     </div>
+    
 
     {% include 'includes/footer.html' %}
+  
 
   </body>
 </html>

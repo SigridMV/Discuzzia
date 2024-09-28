@@ -1,77 +1,86 @@
 /* Styles for the body of the page */
 body {
-    background-color: #f0f8ff; /* Soft background color (light blue) */
-    font-family: Arial, sans-serif; /* Font for the text */
-    display: flex; /* Use flexbox for alignment */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    height: 100vh; /* Full height of the viewport */
-    margin: 0; /* Remove default margin */
+  background-color: #f0f8ff; /* Soft background color (light blue) */
+  font-family: Arial, sans-serif; /* Font for the text */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  height: 100vh; /* Full height of the viewport */
+  margin: 0; /* Remove default margin */
 }
 
 /* Container for the login form */
 .login-container {
-    background-color: #ffffff; /* White background for the form */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow around the container */
-    padding: 30px; /* Internal padding for the container */
-    width: 300px; /* Fixed width for the container */
-    text-align: center; /* Center text inside the container */
+  background-color: #ffffff; /* White background for the form */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow around the container */
+  padding: 30px; /* Internal padding for the container */
+  width: 300px; /* Fixed width for the container */
+  text-align: center; /* Center text inside the container */
 }
 
 /* Style for the heading */
 h2 {
-    color: #333; /* Color for the heading text */
-    margin-bottom: 20px; /* Spacing below the heading */
+  color: #333; /* Color for the heading text */
+  margin-bottom: 20px; /* Spacing below the heading */
 }
 
 /* Styles for the form */
 form {
-    display: flex; /* Use flexbox for the form */
-    flex-direction: column; /* Stack form elements vertically */
+  display: flex; /* Use flexbox for the form */
+  flex-direction: column; /* Stack form elements vertically */
 }
 
 /* Styles for the input fields */
 form input {
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 5px; /* Rounded corners for input fields */
-    padding: 10px; /* Internal padding */
-    margin-bottom: 15px; /* Spacing between input fields */
-    transition: border-color 0.3s; /* Smooth transition for border color */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px; /* Rounded corners for input fields */
+  padding: 10px; /* Internal padding */
+  margin-bottom: 15px; /* Spacing between input fields */
+  transition: border-color 0.3s; /* Smooth transition for border color */
 }
 
 /* Style for input fields when focused */
 form input:focus {
-    border-color: #66afe9; /* Border color when focused */
-    outline: none; /* Remove default outline from the browser */
+  border-color: #66afe9; /* Border color when focused */
+  outline: none; /* Remove default outline from the browser */
 }
 
 /* Styles for the button */
 button {
-    background-color: #66afe9; /* Background color of the button */
-    color: white; /* Text color of the button */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners for the button */
-    padding: 10px; /* Internal padding for the button */
-    cursor: pointer; /* Change cursor when hovering over the button */
-    font-size: 16px; /* Font size for the button text */
-    transition: background-color 0.3s; /* Smooth transition for button background color */
+  background-color: #66afe9; /* Background color of the button */
+  color: white; /* Text color of the button */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners for the button */
+  padding: 10px; /* Internal padding for the button */
+  cursor: pointer; /* Change cursor when hovering over the button */
+  font-size: 16px; /* Font size for the button text */
+  transition: background-color 0.3s; /* Smooth transition for button background color */
 }
 
 /* Style for the button on hover */
 button:hover {
-    background-color: #5a9bd1; /* Button color on hover */
+  background-color: #5a9bd1; /* Button color on hover */
 }
 
 .no_account_text {
-    padding-top: 5px;
-    font-size: 12px;
+  padding-top: 5px;
+  font-size: 12px;
 }
 
 .no_account_text a {
-    padding-left: 5px;
-    color:red;
-    text-decoration: none;
+  padding-left: 5px;
+  color: red;
+  text-decoration: none;
 }
 
+.back-to-home {
+  text-align: center; /* Centra la imagen */
+  margin-bottom: 20px; /* Espacio debajo de la imagen */
+}
 
+.home-icon {
+  width: 20%; 
+  height: auto; 
+  cursor: pointer;
+}
