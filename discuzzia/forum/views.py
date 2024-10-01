@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Topic, Reply
 from .forms import TopicForm, ReplyForm
 from django.contrib.auth import logout
+from django.db.models import Q
 
 @login_required
 def moderation(request):
@@ -67,8 +68,16 @@ def index(request):
 
 @login_required
 def forum(request):
-    topics = Topic.objects.all().order_by('-created_at')  # Get all topics ordered by creation date
-    return render(request, 'forum/forum.html', {'topics': topics})
+    # topics = Topic.objects.all().order_by('-created_at')  # Get all topics ordered by creation date
+    # return render(request, 'forum/forum.html', {'topics': topics})
+    query = request.GET.get('q')  # Get the search query from the request
+    if query:
+        topics = Topic.objects.filter(Q(author__username__icontains=query))  # Filter by author's username
+    else:
+        topics = Topic.objects.all().order_by('-created_at')  # Default to all topics ordered by creation date
+    
+    return render(request, 'forum/forum.html', {'topics': topics, 'query': query})
+
 
 
 @login_required

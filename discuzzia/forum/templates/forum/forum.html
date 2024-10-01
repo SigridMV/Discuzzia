@@ -8,59 +8,67 @@
     <!-- Page title for the forum -->
     <link rel="stylesheet" href="{% static 'forum.css' %}" />
     <link rel="stylesheet" href="{% static 'index.css' %}" />
-    <link rel="icon" href="{% static '/img/favicon.png' %}" type="image/x-icon" />
+    <link
+      rel="icon"
+      href="{% static '/img/favicon.png' %}"
+      type="image/x-icon"
+    />
   </head>
   <body>
+    {% include 'includes/header.html' %} {% include 'includes/nav2.html' %}
 
-    {% include 'includes/header.html' %}
-    {% include 'includes/nav2.html' %}
+    <main>
+      <section class="forum-section">
+        <h2>Discussion Topics</h2>
+        <!-- Section header for discussion topics -->
 
+        <!-- Search form for filtering by author -->
+        <form method="GET" action="{% url 'forum' %}" class="search-form">
+          <input
+            type="text"
+            name="q"
+            placeholder="Search by author"
+            value="{{ query|default_if_none:'' }}"
+          />
+          <button type="submit">Search</button>
+        </form>
 
-    
+        <div class="create-topic">
+          <a href="{% url 'create_topic' %}" class="create-button"
+            >Create New Topic</a
+          >
+        </div>
 
-      <main>
-        <section class="forum-section">
-          <h2>Discussion Topics</h2>
-          <!-- Section header for discussion topics -->
-          
-
-          <div class="create-topic">
-            <a href="{% url 'create_topic' %}" class="create-button"
-              >Create New Topic</a
+        <div class="topic-container">
+          {% for topic in topics %}
+          <!-- Loop through each topic -->
+          <div class="topic-card">
+            <h3>
+              <a href="{% url 'topic_detail' topic.id %}">{{ topic.title }}</a>
+            </h3>
+            <!-- Topic title linked to detail page -->
+            <p>
+              Created by: <strong>{{ topic.author.username }}</strong> on {{ topic.created_at|date:"d F, Y" }}
+            </p>
+            
+            <!-- Author and creation date -->
+            <p>{{ topic.content|truncatewords:30 }}</p>
+            <!-- Truncated description of the topic -->
+            <a href="{% url 'topic_detail' topic.id %}" class="read-more"
+              >Read More</a
             >
+            <!-- Link to read more -->
           </div>
-
-          <div class="topic-container">
-            {% for topic in topics %}
-              <!-- Loop through each topic -->
-              <div class="topic-card">
-                <h3>
-                  <a href="{% url 'topic_detail' topic.id %}">{{ topic.title }}</a>
-                </h3>
-                <!-- Topic title linked to detail page -->
-                <p>
-                  Created by: <strong>{{ topic.author.username }}</strong> on {{ topic.created_at }}
-                </p>
-                <!-- Author and creation date -->
-                <p>{{ topic.content|truncatewords:30 }}</p>
-                <!-- Truncated description of the topic -->
-                <a href="{% url 'topic_detail' topic.id %}" class="read-more">Read More</a>
-                <!-- Link to read more -->
-              </div>
-            {% empty %}
-              <!-- Message when no topics are available -->
-              <p>No topics available.</p>
-            {% endfor %}
-          </div>
-          
-        </section>
-      </main>
+          {% empty %}
+          <!-- Message when no topics are available -->
+          <p>No topics available.</p>
+          {% endfor %}
+        </div>
+      </section>
+    </main>
 
     </div>
-    
 
     {% include 'includes/footer.html' %}
-  
-
   </body>
 </html>
