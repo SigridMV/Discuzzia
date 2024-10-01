@@ -15,7 +15,7 @@ I created it to improve my coding skills, version control practices, and usage o
 
 ## Demo Video 🎥
 
-You can check out the demonstration video at the following link: [Software Demo Video]()
+You can check out the demonstration video at the following link: [Software Demo Video](https://www.loom.com/share/7f1f842633994eb18c2a5249d3a84b82?sid=b6421004-b4b8-4dcf-9211-c4818b14bdf4)
 
 # Development Environment
 
